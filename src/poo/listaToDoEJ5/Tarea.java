@@ -17,6 +17,7 @@ public class Tarea {
 
 
 
+
     public Tarea(String descripcion){
         this.descripcion = descripcion;
         this.estado = false;
