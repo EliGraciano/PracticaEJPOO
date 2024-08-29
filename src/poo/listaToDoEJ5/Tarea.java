@@ -15,9 +15,6 @@ public class Tarea {
         this.fechaLimite =  fechaLimite;
     }
 
-
-
-
     public Tarea(String descripcion){
         this.descripcion = descripcion;
         this.estado = false;
@@ -28,11 +25,6 @@ public class Tarea {
     public int getPrioridad() {
         return prioridad;
     }
-
-
-
-
-
 
     public boolean getEstado() {
         return this.estado;
@@ -57,7 +49,6 @@ public class Tarea {
         }
         return informacion.concat(this.descripcion);
     }
-
 
     public void setPrioridad(int prioridad) {
         this.prioridad = prioridad;
