@@ -19,6 +19,7 @@ public class Contrasenia {
         }else {
             this.tamanioContra = tamaniocontra;
         }
+        this.contrasenia = generateContrasenia();
     }
 
     public String getContrasenia() {
@@ -36,9 +37,9 @@ public class Contrasenia {
         }
         return newContra.toString();
     }
-
-    private boolean contraCheckSecurity(String contra){
-        char[] contraArray = contra.toCharArray();
+    // la iba a hacer private,pero la hago public para poder usarla
+    public boolean contraIsSecurity(){
+        char[] contraArray = this.contrasenia.toCharArray();
         int contMayus = 0;
         int contMinus = 0;
         int contNums = 0;
@@ -54,14 +55,14 @@ public class Contrasenia {
         return contMayus >= 2 && contMinus >=1 && contNums >= 2;
     }
 
-    public String contraEsSegura(String contrasenia){
-        if (contraCheckSecurity(contrasenia)){
-            return null;
-        }
-        else{
-            this.contrasenia = generateContrasenia();
-            return this.contrasenia;
-        }
-    }
+//    public String contraEsSegura(String contrasenia){
+//        if (contraIsSecurity(contrasenia)){
+//            return null;
+//        }
+//        else{
+//            this.contrasenia = generateContrasenia();
+//            return this.contrasenia;
+//        }
+//    }
 
 }
