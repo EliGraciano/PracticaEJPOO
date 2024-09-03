@@ -12,6 +12,6 @@ public class mainContra {
         System.out.print("la contraseña es: "+ contrasenias.get(0).getContrasenia() );
         System.out.println(newContrasenia.contraIsSecurity() ? "(segura)" : "(Insegura)");
         System.out.print("la contraseña es: "+ contrasenias.get(1).getContrasenia() );
-        System.out.println(newContrasenia.contraIsSecurity() ? "(segura)" : "(Insegura)");
+        System.out.println(newContrasenia2.contraIsSecurity() ? "(segura)" : "(Insegura)");
     }
 }
