@@ -3,18 +3,40 @@ package Billetera;
 import java.util.ArrayList;
 
 public class Billetera {
-    private  Usuario  user;
+    private final String DNI_usuario;
     private Dinero saldo;
 
-    public Billetera(String nombre,String apellido,int DNI,String nombreMoneda){
-        Usuario newUser = new Usuario(nombre,apellido,DNI);
-        this.user = user;
-        Moneda monedaCuenta = new Moneda(nombreMoneda,);
-        Dinero newMonto = new Dinero(0,monedaCuenta);
+    public Billetera(String DNI,Moneda moneda,double dineroComienzo){
+        this.DNI_usuario = DNI;
+        Dinero newMonto = new Dinero(dineroComienzo,moneda);
         this.saldo = newMonto;
     }
 
     public Dinero getSaldo() {
         return saldo;
+    }
+
+    public String getDNI_usuario() {
+        return DNI_usuario;
+    }
+
+    public void debitarDinero(Dinero dineroDebitar ){
+        Dinero dineroconvertido = Conversor.convertir(dineroDebitar,this.saldo.getMoneda());
+        double nuevosaldo = this.saldo.getMonto() - dineroconvertido.getMonto();
+        this.saldo = new Dinero(nuevosaldo,this.saldo.getMoneda());
+    }
+
+    public void acreditarDinero(Dinero dineroAcreditar){
+        Dinero dineroconvertido = Conversor.convertir(dineroAcreditar,this.saldo.getMoneda());
+        double nuevosaldo = this.saldo.getMonto() + dineroconvertido.getMonto();
+        this.saldo = new Dinero(nuevosaldo,this.saldo.getMoneda());
+    }
+
+    public boolean aceptTrans(Dinero dineroDebitar){
+        if (this.saldo.getMoneda().equals(dineroDebitar.getMoneda())){
+            return dineroDebitar.getMonto() <= this.saldo.getMonto();
+        }
+        Conversor.convertir(dineroDebitar,this.saldo.getMoneda());
+        return dineroDebitar.getMonto() <= this.saldo.getMonto();
     }
 }

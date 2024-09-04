@@ -1,7 +1,7 @@
 package Billetera;
 
 public class Moneda {
-    private String nombre;
+    private final String nombre;
     private double cotiz;
 
     public Moneda(String nombre,double cotiz) {
@@ -14,6 +14,12 @@ public class Moneda {
     }
 
     public String getNombre() {
-        return nombre;
+        return this.nombre;
     }
+
+    public void setCotiz(double cotiz) {
+        this.cotiz = cotiz;
+    }
+
+
 }

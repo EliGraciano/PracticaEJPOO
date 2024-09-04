@@ -1,7 +1,7 @@
 package Billetera;
 
 public class Dinero {
-    private double monto;
+    private final double monto;
     private final Moneda moneda;
 
     public Dinero(double monto, Moneda moneda) {
@@ -16,4 +16,5 @@ public class Dinero {
     public Moneda getMoneda() {
         return moneda;
     }
+
 }

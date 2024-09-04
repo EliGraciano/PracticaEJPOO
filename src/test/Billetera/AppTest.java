@@ -1,31 +1,30 @@
 package Billetera;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.*;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 class AppTest {
     public App newapp;
-    public App newapp2;
     @BeforeEach
     void setUp(){
         this.newapp = new App();
-        this.newapp2 = new App();
+        newapp.addMoneda("Peso",0.001);
+        newapp.addMoneda("Dolar",1);
+        newapp.addWallet("46186146","Dolar",1400.50);
+        newapp.addWallet("46186020","Peso",140000.50);
     }
     @Test
-    void agregarCuentaApp(){
-        newapp.addAcount;
+    void agregarBilleteraApp(){
+        String billeteras = newapp.Mostrarbilleteras();
+        assertEquals("46186146\n" + "46186020\n",billeteras);
     }
-
 
     @Test
-    void realiarTransferencia(){
-
-
+    void realizarTransferencia(){
+        newapp.transferirDinero("46186020","46186146",50.00,"Dolar");
     }
-
 
 }
