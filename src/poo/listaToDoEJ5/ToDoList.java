@@ -23,8 +23,8 @@ public class ToDoList {
     private void ordenarTareas(){
         int tamanio = this.tareas.size();
         for (int i = 0;i < tamanio;i++){
-            for (int j = 0;j < tamanio;j++){
-                if (this.tareas.get(j).getPrioridad() < this.tareas.get(i).getPrioridad()){
+            for (int j = i;j < tamanio;j++){
+                if (this.tareas.get(j).getPrioridad() > this.tareas.get(i).getPrioridad()){
                     Tarea temp = this.tareas.get(j);
                     this.tareas.set(j,this.tareas.get(j+1));
                     this.tareas.set(j+1,temp);
