@@ -64,5 +64,17 @@ public class App {
         return stringresult.toString();
     }
 
+    public String ConsultarSaldo(String DNI){
+        StringBuilder result = new StringBuilder();
+        for (Billetera bille : this.billeteras){
+            if (bille.getDNI_usuario().equals(DNI)) {
+                result.append(bille.getDNI_usuario());
+                result.append('\n');
+            }
+        }
+
+
+    }
+
 
 }

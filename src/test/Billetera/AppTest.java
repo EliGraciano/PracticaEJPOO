@@ -25,6 +25,7 @@ class AppTest {
     @Test
     void realizarTransferencia(){
         newapp.transferirDinero("46186020","46186146",50.00,"Dolar");
+
     }
 
 }
