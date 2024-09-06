@@ -25,7 +25,10 @@ class AppTest {
     @Test
     void realizarTransferencia(){
         newapp.transferirDinero("46186020","46186146",50.00,"Dolar");
-
+        double saldo_billetera_salida = newapp.ConsultarSaldo("46186146");
+        double saldo_billetera_destino = newapp.ConsultarSaldo("46186020");
+        assertEquals(1350.50,saldo_billetera_salida);
+        assertEquals(190000.50,saldo_billetera_destino);
     }
 
 }
