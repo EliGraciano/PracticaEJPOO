@@ -64,5 +64,15 @@ public class App {
         return stringresult.toString();
     }
 
+    public double ConsultarSaldo(String DNI){
+        double result = 0;
+        for (Billetera bille : this.billeteras){
+            if (bille.getDNI_usuario().equals(DNI)) {
+                result+= bille.getSaldo().getMonto();
+            }
+        }
+        return result;
+    }
+
 
 }
