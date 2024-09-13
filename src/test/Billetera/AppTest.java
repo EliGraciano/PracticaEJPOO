@@ -1,8 +1,8 @@
 package Billetera;
 
+import TP1.Billetera.App;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
