@@ -20,9 +20,7 @@ public class Orden {
     }
 
     public void agregarProducto(Producto producto, int cantidad){
-        this.detalles.add(
-                new DetalleOrden(cantidad, producto)
-        );
+        this.detalles.add(new DetalleOrden(cantidad, producto));
     }
 
     public void aceptar(){
