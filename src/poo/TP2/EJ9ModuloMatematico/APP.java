@@ -1,7 +1,6 @@
 package TP2.EJ9ModuloMatematico;
 
-public class Main {
-
+public class APP {
     public static void main(String[] args) {
         // Figuras 2D
         Figura cuadrado = new Cuadrado(4);

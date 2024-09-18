@@ -23,7 +23,7 @@ public class Main {
                 int nroOrden  = scan.nextInt();
                 System.out.println();
 
-                Repuestera.CargarOrden();
+                //Repuestera.CargarOrden();
             }
 
         }
