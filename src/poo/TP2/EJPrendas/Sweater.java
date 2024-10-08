@@ -1,4 +1,9 @@
 package TP2.EJPrendas;
 
-public class Sweater {
+public class Sweater extends Prenda{
+
+    public Sweater(double precioLista) {
+        super(precioLista);
+        setPorcentajeGanancia(getPorcentajeGanancia() + 8);
+    }
 }
